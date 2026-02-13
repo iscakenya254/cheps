@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChepChep Interiors Kenya Limited</title>
+<link rel="icon" href="lox.png" type="image/png">
+
+<meta name="description" content="ChepChep Interiors Kenya Limited offers premium residential and commercial interior design services. Transform your space today.">
+<meta name="keywords" content="Interior Design, Kenya, Home, Office, ChepChep Interiors, Modern Interiors">
+<meta name="author" content="ChepChep Interiors Kenya Limited">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --primary:#1f2a3a;
+    --accent:#ff7a00;
+    --light:#f4f6f8;
+    --white:#ffffff;
+    --dark-text: #333;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    background:var(--light);
+    color:var(--dark-text);
+}
+
+/* ================= HEADER ================= */
+header{
+    position:absolute;
+    width:100%;
+    z-index:100;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+    color:white;
+}
+
+header img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-size:14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover{
+    color:var(--accent);
+}
+
+/* ================= HERO ================= */
+.hero{
+    height: 65vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('back1.png') center/cover no-repeat;
+    text-align: center;
+}
+
+.hero-content h1{
+    font-size: clamp(28px, 5vw, 48px);
+    max-width: 900px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.btn{
+    background:var(--accent);
+    color:white;
+    padding:12px 30px;
+    text-decoration:none;
+    font-size:14px;
+    display:inline-block;
+    border-radius: 4px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #e66e00;
+    transform: translateY(-2px);
+}
+
+/* ================= ABOUT ================= */
+.about-section {
+    padding: 60px 8%;
+    background: white;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-image {
+    flex: 1;
+    height: 350px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 20px 20px 0px var(--light);
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.about-text p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* ================= PROJECTS (INFINITE CAROUSEL) ================= */
+.projects-section {
+    padding: 80px 0;
+    background: var(--light);
+    overflow: hidden;
+}
+
+.carousel-wrapper {
+    display: flex;
+    width: fit-content;
+    animation: slide-left 30s linear infinite;
+}
+
+.carousel-wrapper:hover {
+    animation-play-state: paused;
+}
+
+.carousel-item {
+    width: 300px;
+    height: 200px;
+    margin: 0 10px;
+    flex-shrink: 0;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+@keyframes slide-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.gallery-btn-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* ================= REVIEWS SECTION ================= */
+.reviews-container {
+    background: var(--primary);
+    color: white;
+    padding: 80px 8%;
+    text-align: center;
+}
+
+#review-display {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+#review-text {
+    font-size: 20px;
+    font-style: italic;
+    transition: opacity 0.5s;
+}
+
+#review-author {
+    color: var(--accent);
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.add-review-form {
+    max-width: 500px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.add-review-form input, .add-review-form textarea {
+    width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 4px; border: none;
+}
+
+/* ================= CONTACT & LOCATION ================= */
+section { padding: 80px 8%; }
+
+.contact form{
+    max-width:600px; margin:auto; display:flex; flex-direction:column;
+}
+
+.contact input, .contact textarea{
+    padding:12px; margin-bottom:15px; border:1px solid #ddd; border-radius:4px;
+}
+
+.location-container{
+    display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;
+}
+
+/* ================= FOOTER & SOCIALS ================= */
+footer{ background:#111; color:white; padding:40px 8%; text-align:center; }
+
+.socials{
+    position:fixed; bottom:20px; right:20px; display:flex; flex-direction:column; gap:10px; z-index:100;
+}
+
+.socials a img{ 
+    width:45px; height:45px; border-radius:50%; transition:0.3s; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.socials a img:hover{ transform: scale(1.1); }
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+    .about-container { flex-direction: column; text-align: center; }
+    .location-container { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="lox.png" alt="ChepChep Logo">
+    <nav>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Transforming Kenya's Spaces with Elegance.</h1>
+        <a href="#contact" class="btn">GET A FREE CONSULTATION</a>
+    </div>
+</section>
+
+<section id="about" class="about-section">
+    <div class="about-container">
+        <div class="about-image">
+            <img src="1.webp" alt="Modern Interior">
+        </div>
+        <div class="about-text">
+            <h2>About ChepChep Interiors</h2>
+            <p>We specialize in turning residential and commercial properties into modern, functional masterpieces. Our approach combines Kenyan craftsmanship with contemporary design trends.</p>
+            <p>From concept to completion, we handle every detail so you can enjoy a space that truly reflects your lifestyle.</p>
+            <a href="#contact" class="btn">Learn More</a>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="projects-section">
+    <div class="section-header" style="text-align: center; margin-bottom: 30px;">
+        <h2 class="section-title">Latest Projects</h2>
+        <p>Our work flows through modern aesthetics. (Hover to pause)</p>
+    </div>
+
+    <div class="carousel-wrapper" id="carousel">
+        </div>
+
+    <div class="gallery-btn-container">
+        <a href="gallery.html" class="btn">VIEW FULL GALLERY</a>
+    </div>
+</section>
+
+<section class="reviews-container">
+    <div id="review-display">
+        <p id="review-text">"ChepChep Interiors transformed our home beautifully."</p>
+        <p id="review-author">- Sarah Wanjiku</p>
+    </div>
+
+    <div class="add-review-form">
+        <h3 style="margin-bottom:15px;">Leave a Review</h3>
+        <form id="reviewForm">
+            <input type="text" id="revName" placeholder="Your Name" required>
+            <textarea id="revText" rows="3" placeholder="Your Review" required></textarea>
+            <button type="submit" class="btn" style="width:100%">Post Review</button>
+        </form>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <h2 class="section-title" style="text-align:center; margin-bottom:30px;">Let's Discuss Your Project</h2>
+    <form onsubmit="return openWhatsApp();">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" rows="5" placeholder="Tell us about your project"></textarea>
+        <button type="submit" class="btn">SEND MESSAGE</button>
+    </form>
+</section>
+
+<section id="location">
+    <div class="location-container">
+        <div class="location-info">
+            <h2 style="margin-bottom:20px;">Visit Our Studio</h2>
+            <p><strong>Address:</strong> Thika Rd, Nairobi</p>
+            <p><strong>Phone:</strong> 0720 489636</p>
+            <p><strong>Hours:</strong> Mon - Sat (8am - 9pm)</p>
+            <br>
+            <a href="https://maps.app.goo.gl/9pRFJTXXqEaX9vSC6" target="_blank" class="btn">GET DIRECTIONS</a>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/place/Chep+chep+interiors+kenya+limited/@-1.0630148,32.6830384,1039816m/data=!3m1!1e3!4m6!3m5!1s0x182f4f61c66b3eb3:0x68a5434e281aeb38!8m2!3d-1.0399913!4d37.0531124!16s%2Fg%2F11kzc0nw09?entry=ttu&g_ep=EgoyMDI2MDIwOS4wIKXMDSoASAFQAw%3D%3D" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 ChepChep Interiors Kenya Limited</p>
+</footer>
+
+<div class="socials">
+    <a href="https://wa.me/254720489636" target="_blank"><img src="w.png" alt="WhatsApp"></a>
+    <a href="https://web.facebook.com/groups/519681538593535/" target="_blank"><img src="f.png" alt="Facebook"></a>
+    <a href="https://www.instagram.com/chepchepinteriors/" target="_blank"><img src="i.png" alt="Instagram"></a>
+    <a href="https://x.com/chepchep_int" target="_blank"><img src="x.png" alt="X"></a>
+</div>
+
+<script>
+// Project Images for Carousel
+const projectImages = ["1.webp", "2.webp", "3.jpg", "4.jpg", "5.jpg", "6.jpg"];
+const carousel = document.getElementById('carousel');
+[...projectImages, ...projectImages].forEach(src => {
+    const div = document.createElement('div');
+    div.className = 'carousel-item';
+    div.innerHTML = `<img src="${src}" alt="Project">`;
+    carousel.appendChild(div);
+});
+
+// Review Logic
+let reviews = [
+    { name: "Sarah Wanjiku", text: "ChepChep Interiors transformed our home beautifully." },
+    { name: "David Maina", text: "Professional team with creative and modern finishes." },
+    { name: "Alice Kamau", text: "Exceptional service delivery and attention to detail." }
+];
+let rIndex = 0;
+setInterval(() => {
+    rIndex = (rIndex + 1) % reviews.length;
+    const textElem = document.getElementById("review-text");
+    const authElem = document.getElementById("review-author");
+    textElem.style.opacity = 0;
+    setTimeout(() => {
+        textElem.innerText = `"${reviews[rIndex].text}"`;
+        authElem.innerText = `- ${reviews[rIndex].name}`;
+        textElem.style.opacity = 1;
+    }, 500);
+}, 4000);
+
+document.getElementById('reviewForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    reviews.push({ name: document.getElementById('revName').value, text: document.getElementById('revText').value });
+    alert("Review added!");
+    this.reset();
+});
+
+function openWhatsApp(){
+    const name = document.getElementById("name").value;
+    const msg = document.getElementById("message").value;
+    window.open(`https://wa.me/254720489636?text=Hi, I am ${name}. ${msg}`, '_blank');
+    return false;
+}
+</script>
+
+</body>
+</html>

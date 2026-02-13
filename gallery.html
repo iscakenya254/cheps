@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | ChepChep Interiors Kenya Limited</title>
+<link rel="icon" href="lox.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --primary: #1f2a3a;
+    --accent: #ff7a00;
+    --light: #f4f6f8;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--light);
+    color: #333;
+}
+
+/* ================= HEADER (Matching Homepage) ================= */
+header {
+    background: var(--primary); /* Solid background for gallery page visibility */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    color: white;
+}
+
+header img {
+    height: 50px;
+    width: auto;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+/* ================= GALLERY TITLE ================= */
+.gallery-header {
+    text-align: center;
+    padding: 60px 8% 40px;
+}
+
+.gallery-header h1 {
+    font-size: 36px;
+    color: var(--primary);
+    position: relative;
+    display: inline-block;
+}
+
+/* The lines on the side of the title as seen in your image */
+.gallery-header h1::before, .gallery-header h1::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 1px;
+    background: #ccc;
+}
+
+.gallery-header h1::before { left: -70px; }
+.gallery-header h1::after { right: -70px; }
+
+/* ================= GALLERY GRID (Bento/Masonry Style) ================= */
+.gallery-container {
+    padding: 0 8% 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 250px;
+    grid-gap: 20px;
+    grid-auto-flow: dense;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+/* Sizing Logic to match your reference image layout */
+.gallery-item.wide { grid-column: span 2; }
+.gallery-item.tall { grid-row: span 2; }
+
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+    .gallery-item.wide, .gallery-item.tall {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #111;
+    color: white;
+    padding: 40px 8%;
+    text-align: center;
+}
+
+.back-home {
+    margin-top: 30px;
+    display: inline-block;
+}
+
+.btn {
+    background: var(--accent);
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <a href="index.html"><img src="lox.png" alt="Logo"></a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="gallery-header">
+    <h1>Our Projects Gallery</h1>
+</div>
+
+<section class="gallery-container" id="galleryGrid">
+    </section>
+
+<div style="text-align: center; padding-bottom: 80px;">
+    <a href="index.html" class="btn">BACK TO HOME</a>
+</div>
+
+<footer>
+    <p>© 2026 ChepChep Interiors Kenya Limited</p>
+</footer>
+
+<script>
+    const totalImages = 14;
+    const galleryGrid = document.getElementById('galleryGrid');
+
+   
+    const layoutClasses = ['wide', 'tall', '', '', 'tall', 'wide', '', 'tall', 'wide', '', '', 'wide', 'tall', ''];
+
+    for (let i = 1; i <= totalImages; i++) {
+        const item = document.createElement('div');
+        
+        
+        let ext = 'jpg';
+        if (i === 1 || i === 2) ext = 'webp';
+        
+        item.className = `gallery-item ${layoutClasses[i-1] || ''}`;
+        item.innerHTML = `<img src="${i}.${ext}" alt="Interior Design Project ${i}" onerror="this.src='${i}.jpg'">`;
+        
+        galleryGrid.appendChild(item);
+    }
+</script>
+
+</body>
+</html>
